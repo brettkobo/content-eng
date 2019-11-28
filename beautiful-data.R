@@ -9,7 +9,7 @@ library(blastula)
 library(patchwork)
 library(config)
 
-texrazor_api_key <- config::get("textrazor", file = ".creds/textrazor.yml")$key
+texrazor_api_key <- config::get("textrazor", file = "creds/textrazor.yml")$key
 
 subreddit <- function(start_date, end_date, subreddit, limit, sort, sort_type) {
   #reddit_fields <- "author,domain,full_link,num_comments,score,title,selftext,subreddit,subreddit_subscribers,url,thumbnail,created_utc"
@@ -171,7 +171,7 @@ email %>%
     from = "me@brettkobold.com",
     to = "brettkobo@gmail.com",
     subject = paste(Sys.Date(), "| Daily Visualization Summary"),
-    credentials = creds_file(file = ".creds/aws_creds")
+    credentials = creds_file(file = "creds/aws_creds")
   )
 
 
